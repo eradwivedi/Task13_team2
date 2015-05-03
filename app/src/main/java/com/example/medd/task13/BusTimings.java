@@ -14,6 +14,7 @@ public class BusTimings extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //checking
         setContentView(R.layout.activity_bus_timings);
         Button check=(Button)findViewById(R.id.maps);
         check.setOnClickListener(new View.OnClickListener() {
