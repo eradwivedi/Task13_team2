@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lightGrey">#BEBEBE</color>
+    <color name="windowBackground">#000080</color>
+    <color name="primary">#1abc9c</color>
+</resources>
