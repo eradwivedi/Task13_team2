@@ -6,4 +6,5 @@
     <string name="title_activity_bus_timings">BusTimings</string>
     <string name="title_activity_mapus">Mapus</string>
     <string name="title_activity_other_buses">OtherBuses</string>
+    <string name="title_activity_first">FirstActivity</string>
 </resources>

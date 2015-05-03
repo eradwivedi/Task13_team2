@@ -29,7 +29,6 @@
         android:text="Other Buses"
         android:width="170dp"
         android:background="@color/primary"
-
         android:drawableRight="@drawable/bus_50_red"
         android:onClick="onClick"/>
 

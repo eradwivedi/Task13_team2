@@ -28,6 +28,10 @@
             android:name=".OtherBuses"
             android:label="@string/title_activity_other_buses" >
         </activity>
+        <activity
+            android:name=".FirstActivity"
+            android:label="@string/title_activity_first" >
+        </activity>
     </application>
 
 </manifest>

@@ -9,18 +9,18 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
+public class FirstActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button check=(Button)findViewById(R.id.start);
+        setContentView(R.layout.activity_first);
+        Button check=(Button)findViewById(R.id.go);
         check.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,FirstActivity.class);
+                Intent intent=new Intent(FirstActivity.this,BusTimings.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_first, menu);
         return true;
     }
 
