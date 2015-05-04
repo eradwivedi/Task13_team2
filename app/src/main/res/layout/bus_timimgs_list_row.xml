@@ -7,7 +7,7 @@
     android:padding="10dip" >
 
     <ImageView
-        android:id="@+id/remove_test"
+        android:id="@+id/time_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/clock_50"
@@ -15,7 +15,7 @@
         android:layout_centerVertical="true"/>
     <TextView
         android:layout_alignParentRight="true"
-        android:id="@+id/test_name_clicked"
+        android:id="@+id/bus_clicked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Approaching"

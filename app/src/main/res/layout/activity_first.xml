@@ -21,14 +21,14 @@
                 android:layout_centerVertical="true"/>
 
             <Spinner
-                android:id="@+id/spinner_location"
+                android:id="@+id/spinner_bus_no"
                 android:layout_width="150dip"
                 android:layout_height="30dip"
                 android:layout_marginLeft="10dip"
                 android:hint="Enter Location"
                 android:textColorHint="@color/lightGrey"
                 android:spinnerMode="dropdown"
-                android:popupBackground="@color/lightGrey"/>
+                android:popupBackground="@color/windowBackground"/>
         </LinearLayout>
 
         <LinearLayout
@@ -49,7 +49,7 @@
                 android:layout_height="30dip"
                 android:layout_marginLeft="10dip"
                 android:spinnerMode="dropdown"
-                android:popupBackground="@color/lightGrey"/>
+                android:popupBackground="@color/windowBackground"/>
         </LinearLayout>
 
         <LinearLayout
@@ -70,7 +70,7 @@
                 android:layout_height="30dip"
                 android:layout_marginLeft="10dip"
                 android:spinnerMode="dropdown"
-                android:popupBackground="@color/lightGrey"/>
+                android:popupBackground="@color/windowBackground"/>
         </LinearLayout>
 
         <Button

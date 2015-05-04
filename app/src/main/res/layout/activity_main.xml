@@ -7,16 +7,29 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_marginTop="100dip"
+        android:layout_marginTop="50dip"
         android:layout_marginLeft="50dip"
         android:layout_height="match_parent">
-
+        <TextView
+            android:id="@+id/text"
+            android:layout_marginLeft="50dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Looking for buses!"
+            android:textColor="@color/primary"
+            android:typeface="sans"
+            android:textSize="25dip"
+            android:maxLength="15"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"/>
 
     <ImageView
             android:id="@+id/location_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/blue_bus"
+            android:layout_marginTop="20dip"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
     </LinearLayout>

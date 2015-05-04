@@ -8,6 +8,7 @@
         android:orientation="horizontal"
         android:padding="10dip" >
         <ImageView
+            android:id="@+id/bus_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/bus_32"
@@ -15,7 +16,7 @@
             android:layout_centerVertical="true"/>
 
         <TextView
-            android:id="@+id/test_name_clicked"
+            android:id="@+id/other_bus_text"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="70dip"
             android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
 
 
         <Button
-            android:id="@+id/otherbuses"
+            android:id="@+id/otherbuses_check"
             android:layout_alignParentRight="true"
             android:layout_width="100dip"
             android:layout_height="wrap_content"
