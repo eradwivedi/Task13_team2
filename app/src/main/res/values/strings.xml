@@ -7,4 +7,7 @@
     <string name="title_activity_mapus">Mapus</string>
     <string name="title_activity_other_buses">OtherBuses</string>
     <string name="title_activity_first">FirstActivity</string>
+    <string name="title_activity_trip_planner">TripPlanner</string>
+    <string name="title_activity_planned_trip">PlannedTrip</string>
+    <string name="title_activity_options">Options</string>
 </resources>

@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerHorizontal="true"
+    android:gravity="center_vertical|center_horizontal"
+   >
+    <LinearLayout
+        android:layout_width="200dip"
+        android:layout_height="200dip"
+        android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_marginTop="20dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        >
+        <Button
+            android:id="@+id/plantrip"
+            android:layout_width="180dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Plan a trip"
+            android:background="@color/primary"
+            />
+        <Button
+            android:id="@+id/pickbus"
+            android:layout_width="180dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dip"
+            android:text="Check out bus"
+            android:background="@color/primary"
+            />
+</LinearLayout>
+    </LinearLayout>
+    </RelativeLayout>

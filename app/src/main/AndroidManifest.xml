@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.medd.task13" >
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -33,6 +34,18 @@
         <activity
             android:name=".FirstActivity"
             android:label="@string/title_activity_first" >
+        </activity>
+        <activity
+            android:name=".TripPlanner"
+            android:label="@string/title_activity_trip_planner" >
+        </activity>
+        <activity
+            android:name=".PlannedTrip"
+            android:label="@string/title_activity_planned_trip" >
+        </activity>
+        <activity
+            android:name=".Options"
+            android:label="@string/title_activity_options" >
         </activity>
     </application>
 

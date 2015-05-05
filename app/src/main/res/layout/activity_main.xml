@@ -29,21 +29,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/blue_bus"
-            android:layout_marginTop="20dip"
+            android:layout_marginTop="10dip"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
     </LinearLayout>
-    <Button
-        android:layout_alignParentBottom="true"
-        android:id="@+id/start"
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginBottom="20dp"
-        android:text="GO"
-        android:width="70dp"
-        android:background="@color/primary"></Button>
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="100dip"
 
+        >
 
+    <Button
+        android:id="@+id/plantrip"
+        android:layout_width="180dip"
+        android:layout_height="wrap_content"
+        android:text="Plan a trip"
+        android:background="@color/primary"
+        />
+    <Button
+        android:id="@+id/pickbus"
+        android:layout_width="180dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:text="Check out bus"
+        android:background="@color/primary"
+        />
+
+</LinearLayout>
 </RelativeLayout>

@@ -3,4 +3,5 @@
     <color name="lightGrey">#BEBEBE</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="primary">#1abc9c</color>
+    <color name="red">#d63838</color>
 </resources>
