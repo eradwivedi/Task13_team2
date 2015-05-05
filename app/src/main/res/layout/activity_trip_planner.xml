@@ -3,7 +3,7 @@
     android:layout_height="fill_parent"
     android:layout_centerHorizontal="true"
     android:gravity="center_vertical|center_horizontal"
-    android:background="#FFFFFF">
+    android:background="@color/windowBackground">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,12 +62,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Depart"
+                android:textColor="@color/primary"
                 android:id="@+id/radioButton2" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Arrive"
+                android:textColor="@color/primary"
                 android:layout_marginLeft="20dip"
                 android:id="@+id/radioButton" />
 
@@ -151,6 +153,7 @@
             android:layout_marginLeft="120dip"
             android:layout_marginTop="15dip"
             android:text="Plan"
+           android:textColor="@color/white"
             android:background="@color/primary"
             />
     </LinearLayout>
