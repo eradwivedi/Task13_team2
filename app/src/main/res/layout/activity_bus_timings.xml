@@ -27,9 +27,10 @@
         android:layout_centerVertical="true"
         android:layout_marginBottom="20dp"
         android:text="Other Buses"
+        android:textColor="@color/white"
         android:width="170dp"
         android:background="@color/primary"
-        android:drawableRight="@drawable/bus_50_red"
+        android:drawableRight="@drawable/bus_white_50"
         android:onClick="onClick"/>
 
     <Button
@@ -40,10 +41,11 @@
         android:layout_centerVertical="true"
         android:layout_marginBottom="20dp"
         android:text="MAP"
+        android:textColor="@color/white"
         android:width="170dp"
         android:background="@color/primary"
         android:layout_marginLeft="20dip"
-        android:drawableRight="@drawable/map_marker_50"
+        android:drawableRight="@drawable/map_marker_white_50"
         android:onClick="onClick"/>
 </LinearLayout>
 </RelativeLayout>

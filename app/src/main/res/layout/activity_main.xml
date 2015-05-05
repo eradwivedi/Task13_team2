@@ -56,6 +56,7 @@
         android:layout_width="180dip"
         android:layout_height="wrap_content"
         android:text="Plan a trip"
+        android:textColor="@color/white"
         android:background="@color/primary"
         />
     <Button
@@ -64,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dip"
         android:text="Check out bus"
+        android:textColor="@color/white"
         android:background="@color/primary"
         />
 
