@@ -3,6 +3,7 @@ package com.example.medd.task13;
 /**
  * Created by Era Dwivedi
  */
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FirstActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
+public class FirstActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

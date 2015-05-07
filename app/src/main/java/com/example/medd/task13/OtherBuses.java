@@ -1,5 +1,6 @@
 package com.example.medd.task13;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class OtherBuses extends ActionBarActivity {
+public class OtherBuses extends Activity {
     ListView list;
     OtherBusesAdapter adapter;
     public static final String KEY_OTHERBUSES="other_buses";

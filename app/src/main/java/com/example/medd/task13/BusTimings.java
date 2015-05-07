@@ -3,6 +3,7 @@ package com.example.medd.task13;
 /**
  * Created by Era Dwivedi
  */
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class BusTimings extends ActionBarActivity {
+public class BusTimings extends Activity {
    public static final String KEY_BUSTIME="bus_time";
     ListView list;
     LazyAdapter adapter;

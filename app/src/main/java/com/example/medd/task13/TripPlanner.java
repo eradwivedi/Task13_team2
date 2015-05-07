@@ -1,5 +1,6 @@
 package com.example.medd.task13;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TripPlanner extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
+public class TripPlanner extends Activity implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
