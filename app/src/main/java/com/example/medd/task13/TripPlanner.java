@@ -1,5 +1,6 @@
 package com.example.medd.task13;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,9 +11,32 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request.Method;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import com.android.volley.toolbox.JsonArrayRequest;
 
 
 public class TripPlanner extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
@@ -27,7 +51,7 @@ public class TripPlanner extends ActionBarActivity implements AdapterView.OnItem
         // Spinner Drop down elements
         List<String> mode = new ArrayList<String>();
         mode.add("Mode");
-        mode.add("Bus");
+        mode.add("Vehicle");
         mode.add("Train");
         mode.add("Subway");
          // Creating adapter for spinner
@@ -96,4 +120,7 @@ public class TripPlanner extends ActionBarActivity implements AdapterView.OnItem
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
+
 }

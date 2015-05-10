@@ -1,17 +1,50 @@
 package com.example.medd.task13;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 
 public class PlannedTrip extends ActionBarActivity {
+    private static String TAG = MainActivity.class.getSimpleName();
+
+    private ProgressDialog pDialog;
+
+    private TextView txtSearchByStop;
+
+    private final static String PAAC_KEY = "vTN6gUhHv44pUCJamB7rXpJGW";
+
+    private SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd hh:mm");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planned_trip);
+        // search upcoming buses by stop#
+        txtSearchByStop = (TextView) findViewById(R.id.txtSearchByStop);
+        String url = "http://realtime.portauthority.org/bustime/api/v2/getpredictions";
+        String fullUrl = Http.urlString(url, "key", PAAC_KEY, "stpid", 7116, "format", "json");
+        searchByStop(fullUrl);
+        // search upcoming buses by route&direction&startStop
+
     }
 
 
@@ -35,5 +68,57 @@ public class PlannedTrip extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void searchByStop(String url) {
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                url, null, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d(TAG, response.toString());
+
+                try {
+
+                    // Parsing json object response
+                    // response will be a json object
+                    ArrayList<Vehicle> comingBuses = new ArrayList<Vehicle>();
+                    JSONObject btrsp = response.getJSONObject("bustime-response");
+                    JSONArray prd = btrsp.getJSONArray("prd");
+                    for (int i = 0; i < prd.length(); i++) {
+                        Vehicle bus = new Vehicle();
+                        JSONObject busObj = prd.getJSONObject(i);
+                        bus.setRt(busObj.getString("rt"));
+                        bus.setDstp(busObj.getString("dstp"));
+
+                        String prdtmStr = busObj.getString("prdtm");
+                        String tmstmpStr = busObj.getString("tmstmp");
+                        bus.setTmleft(Timer.diff(tmstmpStr, prdtmStr));
+                        comingBuses.add(bus);
+                    }
+
+                    txtSearchByStop.append(comingBuses.toString());
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(),
+                            "Error: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                Toast.makeText(getApplicationContext(),
+                        error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Adding request to request queue
+        AppControllerSearchTests.getInstance().addToRequestQueue(jsonObjReq);
     }
 }

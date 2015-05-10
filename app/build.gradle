@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.medd.task13"
-        minSdkVersion 8
+        minSdkVersion 11
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -23,5 +23,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile files('libs/volley.jar')
+    compile 'com.google.android.gms:play-services:7.3.0'
 
 }

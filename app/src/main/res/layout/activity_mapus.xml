@@ -6,7 +6,17 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.medd.task13.MapBus">
 
-    <TextView android:text="Map with bus" android:layout_width="wrap_content"
+    <TextView android:text="Map with bus"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/busPatterns"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:text="bus patterns: "
+        android:layout_marginTop="40px"
+        android:padding="20dp"
+        android:layout_weight="3.38" />
 
 </RelativeLayout>
