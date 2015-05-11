@@ -68,6 +68,16 @@
         android:textColor="@color/white"
         android:background="@color/primary"
         />
+        <Button
+            android:id="@+id/set_alarm_button"
+            android:layout_width="180dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Set Alarm"
+            android:textColor="@color/white"
+            android:background="@color/primary"
+            />
 
-</LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>

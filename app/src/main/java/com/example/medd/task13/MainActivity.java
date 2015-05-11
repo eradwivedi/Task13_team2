@@ -27,6 +27,15 @@ private Bundle savedis;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
        savedis=savedInstanceState;
+        Button setalarmbutton=(Button)findViewById(R.id.set_alarm_button);
+        setalarmbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivity.this,set_alarm.class);
+                startActivity(i);
+
+            }
+        });
         Button plantrip=(Button)findViewById(R.id.plantrip);
         plantrip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,59 +80,10 @@ private Bundle savedis;
         }
         if(id==R.id.action_alarm)
         {
-            Dialog dialog = new Dialog(MainActivity.this);
-            dialog.setContentView(R.layout.dialog_layout);
-            dialog.setTitle("Set alarm");
-
-  //            Dialog d=onCreateDialog(savedInstanceState);
-            Dialog d=onCreateDialog(savedis);
-
-            d.show();
-
-
-            return true;
+           return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        // Get the layout inflater
-        LayoutInflater inflater = MainActivity.this.getLayoutInflater();
-        final View inflator = inflater.inflate(R.layout.dialog_layout, null);
-        final EditText startstop_field = (EditText)inflator.findViewById(R.id.startstop);
-        final EditText endstop_field = (EditText)inflator.findViewById(R.id.endstop);
-        final Button ct=(Button)inflator.findViewById(R.id.Choose_time);
-
-        ct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment newFragment1 = new TimePickerFragment();
-                newFragment1.show(getFragmentManager(), "timePicker");
-
-            }
-        });
-        // Inflate and set the layout for the dialog
-        // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.dialog_layout, null))
-                // Add action buttons
-                .setPositiveButton(R.string.addAdress, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        //Update Db;
-                        Log.d("checkaddressafterclick", startstop_field.getText().toString());
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                })
-                .setNegativeButton(R.string.back, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        //  LoginDialogFragment.this.getDialog().cancel();
-                        dialog.cancel();
-                    }
-                });
-        return builder.create();
-    }
-
 
 }

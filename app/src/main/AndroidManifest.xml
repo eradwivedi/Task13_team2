@@ -47,6 +47,10 @@
             android:name=".Options"
             android:label="@string/title_activity_options" >
         </activity>
+        <activity
+            android:name=".set_alarm"
+            android:label="@string/title_activity_set_alarm" >
+        </activity>
     </application>
 
 </manifest>

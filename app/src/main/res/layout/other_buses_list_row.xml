@@ -11,6 +11,7 @@
             android:id="@+id/bus_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:src="@drawable/bus_32"
             android:layout_marginRight="30dip"
             android:layout_centerVertical="true"/>
@@ -30,21 +31,22 @@
             android:ellipsize="end"
             android:singleLine="true"
             android:textStyle="bold"/>
-
-
-        <Button
-            android:id="@+id/otherbuses_check"
-            android:layout_alignParentRight="true"
-            android:layout_width="100dip"
+        <TextView
+            android:id="@+id/other_bus_timing"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="200dip"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="20dp"
-            android:text="Check Bus"
-            android:textColor="@color/white"
-            android:width="170dp"
-            android:background="@color/primary"
-            android:onClick="onClick"/>
+            android:layout_marginTop="20dip"
+            android:text="Approaching"
+            android:textColor="#040404"
+            android:typeface="sans"
+            android:textSize="25dip"
+            android:maxLength="15"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"/>
+
     </RelativeLayout>
 
 

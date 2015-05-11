@@ -2,35 +2,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-            <EditText
-            android:id="@+id/startstop"
-            android:inputType="textEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Start Stop"
-            android:textColorHint="@color/lightGrey"/>
-            <EditText
-                android:id="@+id/endstop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="4dp"
-                android:hint="End stop"
-                android:textColorHint="@color/lightGrey"/>
-        <Button
-            android:id="@+id/Choose_time"
-            android:layout_width="180dip"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dip"
-            android:text="Choose Time"
-            android:textColor="@color/white"
-            android:background="@color/primary"
-            />
 
 </LinearLayout>

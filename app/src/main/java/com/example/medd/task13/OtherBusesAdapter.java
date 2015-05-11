@@ -55,7 +55,7 @@ public class OtherBusesAdapter extends BaseAdapter {
 
         TextView name = (TextView)vi.findViewById(R.id.other_bus_text); // title
         ImageView thumb_image=(ImageView)vi.findViewById(R.id.bus_other); // thumb image
-        Button b=(Button)vi.findViewById(R.id.otherbuses_check);
+      /*  Button b=(Button)vi.findViewById(R.id.otherbuses_check);
         b.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Integer index = (Integer) v.getTag();
@@ -65,8 +65,8 @@ public class OtherBusesAdapter extends BaseAdapter {
                 activity.getApplicationContext().startActivity(i);
 
             }
-        });
-
+        });*/
+        TextView timing = (TextView)vi.findViewById(R.id.other_bus_timing);
         HashMap<String, String> other_buses = new HashMap<String, String>();
         other_buses = data.get(position);
 
