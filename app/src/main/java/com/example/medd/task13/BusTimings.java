@@ -19,6 +19,7 @@ import java.util.HashMap;
 
 public class BusTimings extends Activity {
    public static final String KEY_BUSTIME="bus_time";
+    private int stop_id;
     ListView list;
     LazyAdapter adapter;
     @Override
@@ -26,9 +27,12 @@ public class BusTimings extends Activity {
         super.onCreate(savedInstanceState);
         //checking
         setContentView(R.layout.activity_bus_timings);
+        Bundle extras = getIntent().getExtras();
+        stop_id=extras.getInt("Stop_id");
+        HashMap<String,String>buses_onroute;
 
         ArrayList<HashMap<String, String>> bustimingsToDisplay = new ArrayList<HashMap<String, String>>();
-        HashMap<String, String> bustiming=new HashMap<String, String>();
+        HashMap<String, String> bustiming=fetchbuses(stop_id);
         //ArrayList<BustimingsDataobject> bustimings=new ArrayList<BustimingsDataobject>();
         bustiming.put(KEY_BUSTIME,"26 minutes");
         bustimingsToDisplay.add(bustiming);
@@ -79,7 +83,11 @@ public class BusTimings extends Activity {
 
     }
 
-
+    private HashMap fetchbuses(int stop_id)
+    {   HashMap<String,String> buses=new HashMap<>();
+        //
+        return buses;
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

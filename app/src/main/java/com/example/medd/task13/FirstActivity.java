@@ -16,19 +16,20 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
 public class FirstActivity extends Activity implements AdapterView.OnItemSelectedListener {
-
+   private String busnoselected;
+    private String stopselected;
+    HashMap<String,Integer> stop_bus_selected;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
         final Spinner bus_no_spinner = (Spinner) findViewById(R.id.spinner_bus_no);
         // Spinner click listener
-        bus_no_spinner.setOnItemSelectedListener(this);
-        // Spinner Drop down elements
         List<String> bus_no = new ArrayList<String>();
         bus_no.add("Enter stop");
         bus_no.add("71B");
@@ -46,6 +47,19 @@ public class FirstActivity extends Activity implements AdapterView.OnItemSelecte
         dataAdapter_bus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // attaching data adapter to spinner
         bus_no_spinner.setAdapter(dataAdapter_bus);
+
+        bus_no_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                       busnoselected=bus_no_spinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        // Spinner Drop down elements
 
         final Spinner bound_spinner = (Spinner) findViewById(R.id.spinner_bound);
         // Spinner click listener
@@ -68,10 +82,14 @@ public class FirstActivity extends Activity implements AdapterView.OnItemSelecte
         // Spinner click listener
         stop_spinner.setOnItemSelectedListener(this);
         // Spinner Drop down elements
+         stop_bus_selected=fetchStops(busnoselected);
+
         List<String> stop = new ArrayList<String>();
         stop.add("Select Stop");
-        stop.add("Fifth at Negley");
-        stop.add("Forbes Craig");
+        for(String s:stop_bus_selected.keySet())
+        {
+            stop.add(s);
+        }
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter_stop = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,stop);
@@ -80,17 +98,38 @@ public class FirstActivity extends Activity implements AdapterView.OnItemSelecte
         // attaching data adapter to spinner
         stop_spinner.setAdapter(dataAdapter_stop);
 
+        stop_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                stopselected=stop_spinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         Button check=(Button)findViewById(R.id.go);
         check.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                Bundle b=new Bundle();
+                int stop_id=stop_bus_selected.get(stopselected);
+                b.putInt("Stop_id",stop_id);
                 Intent intent=new Intent(FirstActivity.this,BusTimings.class);
+                intent.putExtras(b);
                 startActivity(intent);
             }
         });
     }
 
+    private HashMap fetchStops(String busno)
+    {   HashMap<String,Integer> stops=new HashMap<>();
+        //
+        return stops;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
