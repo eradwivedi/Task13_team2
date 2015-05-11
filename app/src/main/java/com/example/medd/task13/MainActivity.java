@@ -38,12 +38,11 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button plantrip=(Button)findViewById(R.id.plantrip);
-
         plantrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i=new Intent(MainActivity.this,TripPlanner.class);
+                //Intent i = new Intent(MainActivity.this, MapPane.class);
                 startActivity(i);
             }
         });
