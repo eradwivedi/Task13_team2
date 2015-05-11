@@ -1,6 +1,9 @@
 package com.example.medd.task13;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -53,6 +57,24 @@ public class TripPlanner extends Activity implements AdapterView.OnItemSelectedL
         dataAdapter_route.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // attaching data adapter to spinner
         route_spinner.setAdapter(dataAdapter_route);
+        Button pick_date=(Button)findViewById(R.id.datepicker);
+        pick_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(getFragmentManager(), "datePicker");
+
+            }
+        });
+        Button pick_time=(Button)findViewById(R.id.timepicker);
+        pick_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment1 = new TimePickerFragment();
+                newFragment1.show(getFragmentManager(), "timePicker");
+
+            }
+        });
 
         Button plan=(Button)findViewById(R.id.plan);
         plan.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +84,7 @@ public class TripPlanner extends Activity implements AdapterView.OnItemSelectedL
                 startActivity(i);
             }
         });
+
 
     }
 

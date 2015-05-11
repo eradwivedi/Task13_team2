@@ -91,14 +91,20 @@
                 android:textStyle="bold"
                 android:id="@+id/datetext"
                 />
-            <EditText
-                android:id="@+id/date"
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
-                android:hint="Date"
-                android:textColorHint="@color/lightGrey"
-                />
+            <Button
+                android:layout_width="120dip"
+                android:layout_height="40dip"
+                android:text="Pick a date"
+                android:id="@+id/datepicker"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="30dip"
+                android:textColor="@color/white"
+                android:background="@color/primary"
+                android:layout_gravity="center_horizontal" />
+
         </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -114,13 +120,16 @@
                 android:textStyle="bold"
                 android:id="@+id/textView"
                  />
-            <EditText
-                android:id="@+id/Time"
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
-                android:hint="Time"
-                android:textColorHint="@color/lightGrey"
-                />
+            <Button
+                android:layout_width="120dip"
+                android:layout_height="40dip"
+                android:text="Pick a time"
+                android:id="@+id/timepicker"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="30dip"
+                android:textColor="@color/white"
+                android:background="@color/primary"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -153,7 +162,7 @@
             android:layout_marginLeft="120dip"
             android:layout_marginTop="15dip"
             android:text="Plan"
-           android:textColor="@color/white"
+            android:textColor="@color/white"
             android:background="@color/primary"
             />
     </LinearLayout>
