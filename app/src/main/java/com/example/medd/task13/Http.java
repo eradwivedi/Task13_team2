@@ -80,7 +80,7 @@ public class Http {
         StringBuilder sb = new StringBuilder();
         sb.append(base + "?");
         for (String paramKey: params.keySet()) {
-            sb.append(paramKey + "=" + params.get(paramKey) + "&");
+            sb.append(urlEncode(paramKey) + "=" + urlEncode(params.get(paramKey)) + "&");
         }
         sb.deleteCharAt(sb.length() - 1);
         String rst = sb.toString();

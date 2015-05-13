@@ -9,6 +9,14 @@ public class Stop {
     private double lat;
     private double lon;
 
+    public Stop() {}
+
+    public Stop(String stpnm, String lat, String lon) {
+        this.stpnm = stpnm;
+        this.lat = Double.parseDouble(lat);
+        this.lon = Double.parseDouble(lon);
+    }
+
     public void setStpid(String stpid) {
         this.stpid = Integer.parseInt(stpid);
     }

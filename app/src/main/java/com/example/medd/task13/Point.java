@@ -12,6 +12,15 @@ public class Point {
     //private String stpnm;
     private double pdist;
 
+    public Point(){};
+
+    public Point(String lat, String lon) {
+        this.lat = Double.parseDouble(lat);
+        this.lon = Double.parseDouble(lon);
+    }
+
+
+
     public void setSeq(String seq) {
         this.seq = Integer.parseInt(seq);
     }
