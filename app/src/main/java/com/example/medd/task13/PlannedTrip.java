@@ -73,11 +73,14 @@ public class PlannedTrip extends ActionBarActivity {
                         String step_polyline = step.getJSONObject("polyline").getString("points");
                         Point step_start_location = new Point(step.getJSONObject("start_location").getString("lat"),
                                 step.getJSONObject("start_location").getString("lng"));
-
                         String travel_mode = step.getString("travel_mode");
                         Log.d("travel_mode", travel_mode);
+
+                        GoogleStep googleStep = new GoogleStep(step_distance, step_duration, step_end_location,
+                                html_instructions, step_polyline, step_start_location, travel_mode);
+
                         if (travel_mode.equals("TRANSIT")) {
-                            Log.d("hi", "there");
+                            //Log.d("hi", "there");
                             JSONObject details = step.getJSONObject("transit_details");
                             Stop arrival_stop = new Stop(details.getJSONObject("arrival_stop").getString("name"),
                                     details.getJSONObject("arrival_stop").getJSONObject("location").getString("lat"),
@@ -90,10 +93,23 @@ public class PlannedTrip extends ActionBarActivity {
                             String line = details.getJSONObject("line").getString("short_name");
                             String transit_type = details.getJSONObject("line").getJSONObject("vehicle").getString("type"); // "BUS"
                             String num_stops = details.getString("num_stops");
-                            Log.d("arrival_stop", arrival_stop.toString());
+                            //Log.d("arrival_stop", arrival_stop.toString());
+
+                            googleStep.setArrival_stop(arrival_stop);
+                            googleStep.setArrival_time(transit_arrival_time);
+                            googleStep.setDeparture_stop(departure_stop);
+                            googleStep.setDeparture_time(transit_departure_time);
+                            googleStep.setLine(line);
+                            googleStep.setTransit_type(transit_type);
+                            googleStep.setNum_stops(num_stops);
                         }
 
+                        googleSteps.add(googleStep);
                     }
+
+                    GoogleRoute googleRoute = new GoogleRoute(arrival_time, departure_time, distance,
+                            duration, end_address, end_location, start_address, start_location, googleSteps);
+                    googleRoutes.add(googleRoute);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -101,19 +117,6 @@ public class PlannedTrip extends ActionBarActivity {
                         "Error: " + e.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
-
-            /*
-            JSONObject btrsp = response.getJSONObject("bustime-response");
-            JSONArray stops = btrsp.getJSONArray("stops");
-            for (int i = 0; i < stops.length(); i++) {
-                JSONObject stop = stops.getJSONObject(i);
-                stopMap.put(Integer.parseInt(stop.getString("stpid")),
-                        stop.getString("stpnm"));
-            }
-
-            txtShowStops.append(stopMap.toString());
-            Log.d("bus stops for 61B", stopMap.toString());
-            */
         }
     };
 
