@@ -30,21 +30,6 @@
             android:ellipsize="end"
             android:singleLine="true"
             android:textStyle="bold"/>
-
-
-        <Button
-            android:id="@+id/otherbuses_check"
-            android:layout_alignParentRight="true"
-            android:layout_width="100dip"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginBottom="20dp"
-            android:text="Check Bus"
-            android:textColor="@color/white"
-            android:width="170dp"
-            android:background="@color/primary"
-            android:onClick="onClick"/>
     </RelativeLayout>
 
 

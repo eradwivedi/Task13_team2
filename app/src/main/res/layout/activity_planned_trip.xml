@@ -6,40 +6,32 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.medd.task13.PlannedTrip">
 
-    <TextView android:text="Planned Trip" android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/list_plantrip"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:divider="@color/primary"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true">
 
-    <TextView
-        android:id="@+id/txtShowAllRts"
-        android:layout_width="373dp"
+    <Button
+        android:id="@+id/back_home"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="choose route: "
-        android:padding="20dp"
-        android:layout_weight="3.38"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/txtShowStops"
-        android:layout_width="373dp"
-        android:layout_height="wrap_content"
-        android:text="choose stop: "
-        android:padding="20dp"
-        android:layout_weight="3.38"
-        android:layout_below="@+id/txtShowAllRts"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp" />
-
-    <TextView
-        android:id="@+id/txtSearchByStop"
-        android:layout_width="373dp"
-        android:layout_height="wrap_content"
-        android:text="upcoming bus: "
-        android:padding="20dp"
-        android:layout_weight="3.38"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="HOME"
+        android:textColor="@color/white"
+        android:width="170dp"
+        android:background="@color/primary"
+        android:onClick="onClick"/>
+    </LinearLayout>
 
 </RelativeLayout>

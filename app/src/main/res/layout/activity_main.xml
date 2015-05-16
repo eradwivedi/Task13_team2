@@ -27,7 +27,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dip"
+            android:layout_marginTop="40dip"
             android:id="@+id/imageView"
             android:src="@drawable/gt_100"
             android:layout_gravity="center_horizontal" />
@@ -45,11 +45,11 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="200dip"
+        android:layout_height="250dip"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="100dip"
 
-        android:weightSum="1">
+        >
 
     <Button
         android:id="@+id/plantrip"
@@ -68,6 +68,25 @@
         android:textColor="@color/white"
         android:background="@color/primary"
         />
+        <Button
+            android:id="@+id/set_alarm_button"
+            android:layout_width="180dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Set Alarm"
+            android:textColor="@color/white"
+            android:background="@color/primary"
+            />
+        <Button
+            android:id="@+id/buspass_button"
+            android:layout_width="180dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Bus Pass"
+            android:textColor="@color/white"
+            android:background="@color/primary"
+            />
+
 
     </LinearLayout>
 </RelativeLayout>

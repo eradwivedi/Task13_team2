@@ -2,13 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.medd.task13" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- The following two permissions are not required to use
-     Google Maps Android API v2, but are recommended. -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--
+     The following two permissions are not required to use
+     Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:name=".AppControllerSearchTests"
@@ -42,6 +53,11 @@
             android:label="@string/title_activity_first" >
         </activity>
         <activity
+            android:name=".Options"
+            android:label="@string/title_activity_options" >
+        </activity>
+
+        <activity
             android:name=".TripPlanner"
             android:label="@string/title_activity_trip_planner" >
         </activity>
@@ -49,9 +65,28 @@
             android:name=".PlannedTrip"
             android:label="@string/title_activity_planned_trip" >
         </activity>
+
+
+
         <activity
-            android:name=".Options"
+            android:name=".RouteMap"
+            android:label="@string/title_activity_route_map" >
+        </activity>
+        <activity
+            android:name=".RouteDetails"
             android:label="@string/title_activity_options" >
+        </activity>
+        <activity
+            android:name=".set_alarm"
+            android:label="@string/title_activity_set_alarm" >
+        </activity>
+        <activity
+            android:name=".Bus_Pass"
+            android:label="@string/title_activity_bus__pass" >
+        </activity>
+        <activity
+            android:name=".Success"
+            android:label="@string/title_activity_success" >
         </activity>
 
         <meta-data
@@ -59,7 +94,11 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD20PwDGdPhlGmkYeqqatw3yStPL6BESZ4"/>
+            android:value="AIzaSyD20PwDGdPhlGmkYeqqatw3yStPL6BESZ4" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

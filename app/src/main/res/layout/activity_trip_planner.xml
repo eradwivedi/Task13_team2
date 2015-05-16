@@ -4,6 +4,7 @@
     android:layout_centerHorizontal="true"
     android:gravity="center_vertical|center_horizontal"
     android:background="@color/windowBackground">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +22,7 @@
                 android:src="@drawable/marker_red_32"
                 android:layout_centerVertical="true"/>
             <EditText
-                android:id="@+id/start_address"
+                android:id="@+id/start_address_t"
                 android:layout_width="243dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
@@ -36,6 +37,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="20dip">
+
             <ImageView
                 android:id="@+id/location_marker1"
                 android:layout_width="wrap_content"
@@ -44,7 +46,7 @@
                 android:layout_centerVertical="true"/>
 
             <EditText
-                android:id="@+id/end_address"
+                android:id="@+id/end_address_t"
                 android:layout_width="243dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dip"
@@ -58,6 +60,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,7 +79,7 @@
                 android:textColor="@color/primary"
                 android:layout_marginLeft="20dip"
                 android:id="@+id/radioButton" />
-
+</RadioGroup>
 
         </LinearLayout>
 
@@ -91,14 +98,20 @@
                 android:textStyle="bold"
                 android:id="@+id/datetext"
                 />
-            <EditText
-                android:id="@+id/date"
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
-                android:hint="Date"
-                android:textColorHint="@color/lightGrey"
-                />
+            <Button
+                android:layout_width="120dip"
+                android:layout_height="40dip"
+                android:text="Pick a date"
+                android:id="@+id/datepicker"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="30dip"
+                android:textColor="@color/white"
+                android:background="@color/primary"
+                android:layout_gravity="center_horizontal" />
+
         </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -114,13 +127,16 @@
                 android:textStyle="bold"
                 android:id="@+id/textView"
                  />
-            <EditText
-                android:id="@+id/Time"
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
-                android:hint="Time"
-                android:textColorHint="@color/lightGrey"
-                />
+            <Button
+                android:layout_width="120dip"
+                android:layout_height="40dip"
+                android:text="Pick a time"
+                android:id="@+id/timepicker"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="30dip"
+                android:textColor="@color/white"
+                android:background="@color/primary"
+                android:layout_gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -144,8 +160,6 @@
                 android:spinnerMode="dropdown"
                 android:popupBackground="@color/windowBackground"/>
         </LinearLayout>
-
-
         <Button
             android:id="@+id/plan"
             android:layout_width="80dip"
@@ -153,10 +167,8 @@
             android:layout_marginLeft="120dip"
             android:layout_marginTop="15dip"
             android:text="Plan"
-           android:textColor="@color/white"
+            android:textColor="@color/white"
             android:background="@color/primary"
             />
     </LinearLayout>
-
-
 </RelativeLayout>

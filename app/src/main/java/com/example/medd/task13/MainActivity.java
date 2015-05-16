@@ -2,47 +2,54 @@ package com.example.medd.task13;
 /**
  * Created by Era Dwivedi
  */
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.app.ProgressDialog;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.util.Log;
-
-import java.net.URL;
-
-import com.android.volley.Request.Method;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-
-import java.util.ArrayList;
+import android.widget.EditText;
 
 
-
-public class MainActivity extends ActionBarActivity {
-
+public class MainActivity extends Activity {
+    private Bundle savedis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        savedis=savedInstanceState;
+        Button buspass=(Button)findViewById(R.id.buspass_button);
+        buspass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivity.this,Bus_Pass.class);
+                startActivity(i);
+
+            }
+        });
+        Button setalarmbutton=(Button)findViewById(R.id.set_alarm_button);
+        setalarmbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(MainActivity.this,set_alarm.class);
+                startActivity(i);
+
+            }
+        });
         Button plantrip=(Button)findViewById(R.id.plantrip);
         plantrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(MainActivity.this,TripPlanner.class);
-                //Intent i = new Intent(MainActivity.this, MapPane.class);
                 startActivity(i);
             }
         });
@@ -58,11 +65,15 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        //return true;
     }
 
     @Override
@@ -76,7 +87,12 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if(id==R.id.action_alarm)
+        {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
+
 }

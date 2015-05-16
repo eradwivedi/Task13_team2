@@ -10,4 +10,11 @@
     <string name="title_activity_trip_planner">TripPlanner</string>
     <string name="title_activity_planned_trip">PlannedTrip</string>
     <string name="title_activity_options">Options</string>
+    <string name="action_addalarm">addalarm</string>
+    <string name="addAdress">set alarm</string>
+    <string name="back">back</string>
+    <string name="title_activity_set_alarm">set_alarm</string>
+    <string name="title_activity_bus__pass">Bus_Pass</string>
+    <string name="title_activity_success">Success</string>
+    <string name="title_activity_route_map">RouteMap</string>
 </resources>

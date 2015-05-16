@@ -2,10 +2,12 @@ package com.example.medd.task13;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by Lei on 5/12/15.
  */
-public class GoogleStep {
+public class GoogleStep implements Serializable{
     private String distance;
     private String duration;
     private Point end_location;
@@ -33,6 +35,53 @@ public class GoogleStep {
         this.start_location = start_location;
         this.travel_mode = travel_mode;
         Log.d("GoogleStepStep.java", polyline);
+    }
+
+    public String getDeparture_time() {
+        return departure_time;
+    }
+
+    public String getArrival_time() {
+        return arrival_time;
+    }
+
+    public String getDeparture_stop() {
+        return departure_stop.getStpnm();
+    }
+
+    public String getArrival_stop() {
+        return arrival_stop.getStpnm();
+    }
+
+
+    public String getTravel_mode() {
+        return travel_mode;
+    }
+
+    public String getHtml_instructions() {
+        return html_instructions;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public String getPolyline() {
+        return polyline;
+    }
+
+    public String getStepName() {
+        if (travel_mode.equals("TRANSIT")) {
+            Log.d("getStepName", line);
+            return line;
+        } else {
+            Log.d("getStepName", travel_mode);
+            return travel_mode;
+        }
     }
 
     public void setArrival_stop(Stop arrival_stop) {

@@ -22,8 +22,15 @@ public class Vehicle {
         this.dly = false;
     }
 
+    public void setVid(String id){
+        this.vid = id;
+    }
+
     public void setRt(String rt) {
         this.rt = rt;
+    }
+    public void setDes(String rt) {
+        this.des = rt;
     }
 
     public void setDstp(String dstp) {
@@ -60,11 +67,15 @@ public class Vehicle {
 
     public String getVid() { return vid; }
 
+    public Double getLat() { return lat; }
+    public Double getLon() { return lon; }
+
     public String getRt() { return rt; }
 
     public String getRtdir() { return rtdir; }
 
     public String getDes() { return des; }
+    public boolean getDly() { return dly; }
 
     public String getDstp() {
         return dstp;

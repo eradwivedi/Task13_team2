@@ -1,9 +1,11 @@
 package com.example.medd.task13;
 
+import java.io.Serializable;
+
 /**
  * Created by Lei on 5/10/15.
  */
-public class Stop {
+public class Stop implements Serializable{
     private int stpid;
     private String stpnm;
     private double lat;

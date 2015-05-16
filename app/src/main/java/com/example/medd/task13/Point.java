@@ -1,9 +1,11 @@
 package com.example.medd.task13;
 
+import java.io.Serializable;
+
 /**
  * Created by Lei on 5/9/15.
  */
-public class Point {
+public class Point implements Serializable{
     private int seq;
     private double lat;
     private double lon;

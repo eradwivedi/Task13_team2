@@ -28,6 +28,9 @@ public class Route {
     public void setPts(ArrayList<Point> pts) {
         this.pts = pts;
     }
+    public ArrayList<Point> getPts(){
+        return pts;
+    }
 
     public String toString() {
         return "dir: " + rtdir + pts.toString();

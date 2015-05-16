@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context="com.example.medd.task13.Success">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        >
+    <TextView android:text="Congratulation! Bus pass would be mailed to the postal address soon."
+        android:layout_width="150dip"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textSize="20dip"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/home_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="40dip"
+        android:src="@drawable/home_64_blue"
+        android:width="170dp"
+        android:onClick="onClick"/>
+</LinearLayout>
+</RelativeLayout>
