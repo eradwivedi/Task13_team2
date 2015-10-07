@@ -1,5 +1,5 @@
 # PAAC Trip Planner 
-- An Android App for trip planning using public transit in great pittsburgh area
+- An Android App for trip planning using public transit in greater pittsburgh area
 
 Funcations: 
   - Searching routes from start address to end address. Users can choose arrival time or departure time, setup route preferences and traval mode. Step-by-step text instructions and real-time map are both provided. 
